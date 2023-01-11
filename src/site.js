@@ -1,6 +1,6 @@
 import createAboutUs from "./about.js";
 
-function header() {
+function makeHeader() {
   const header = document.createElement("div");
   const headerLogo = document.createElement("div");
 
@@ -13,44 +13,44 @@ function header() {
   return header;
 }
 
-function nav() {
+function makeNav() {
   const navBar = document.createElement("div");
-  const homebtn = document.createElement("button");
-  const menubtn = document.createElement("button");
-  const aboutbtn = document.createElement("button");
-
   navBar.classList.add("navBar");
 
+  const homebtn = document.createElement("button");
   homebtn.classList.add("nav-buttons");
-  menubtn.classList.add("nav-buttons");
-  aboutbtn.classList.add("nav-buttons");
-
   homebtn.textContent = "Home";
-  homebtn.addEventListener("click", () => {
+
+  const menubtn = document.createElement("button");
+  menubtn.classList.add("nav-buttons");
+  menubtn.textContent = "Menu";
+
+  const aboutbtn = document.createElement("button");
+  aboutbtn.classList.add("nav-buttons");
+  aboutbtn.textContent = "About";
+  aboutbtn.addEventListener("click", () => {
     createAboutUs();
   });
 
-  menubtn.textContent = "Menu";
-  aboutbtn.textContent = "About";
-
-  navBar.append(homebtn, menubtn, aboutbtn);
+  navBar.appendChild(homebtn);
+  navBar.appendChild(menubtn);
+  navBar.appendChild(aboutbtn);
 
   return navBar;
 }
 
-function main() {
-  const main = document.createElement("div");
+function makeMain() {
+  const main = document.createElement("main");
   main.setAttribute("id", "main");
-  main.textContent = " ";
-
   return main;
 }
 
 function loadSite() {
-  content = document.getElementById("content");
-  content.appendChild(header());
-  content.appendChild(nav());
-  content.appendChild(main());
+  const content = document.getElementById("content");
+
+  content.appendChild(makeHeader());
+  content.appendChild(makeNav());
+  content.appendChild(makeMain());
 }
 
 export default loadSite();
