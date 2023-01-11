@@ -60,6 +60,8 @@ function loadSite() {
   content.appendChild(makeHeader());
   content.appendChild(makeNav());
   content.appendChild(makeMain());
+
+  createHome();
 }
 
 export default loadSite();
