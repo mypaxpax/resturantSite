@@ -1,4 +1,5 @@
 import createAboutUs from "./about.js";
+import createHome from "./home.js";
 
 function makeHeader() {
   const header = document.createElement("div");
@@ -20,6 +21,9 @@ function makeNav() {
   const homebtn = document.createElement("button");
   homebtn.classList.add("nav-buttons");
   homebtn.textContent = "Home";
+  homebtn.addEventListener("click", () => {
+    createHome();
+  });
 
   const menubtn = document.createElement("button");
   menubtn.classList.add("nav-buttons");
@@ -42,6 +46,7 @@ function makeNav() {
 function makeMain() {
   const main = document.createElement("main");
   main.setAttribute("id", "main");
+
   return main;
 }
 
