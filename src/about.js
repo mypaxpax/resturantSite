@@ -15,8 +15,8 @@ function about() {
 }
 
 function createAboutUs() {
-  const main = document.querySelector("main");
-  main.textContent = " ";
+  const main = document.getElementById("main");
+  main.textContent = "";
   main.appendChild(about());
 }
 
