@@ -1,5 +1,6 @@
 import createAboutUs from "./about.js";
 import createHome from "./home.js";
+import createMenu from "./menu.js";
 
 function makeHeader() {
   const header = document.createElement("div");
@@ -28,6 +29,9 @@ function makeNav() {
   const menubtn = document.createElement("button");
   menubtn.classList.add("nav-buttons");
   menubtn.textContent = "Menu";
+  menubtn.addEventListener("click", () => {
+    createMenu();
+  });
 
   const aboutbtn = document.createElement("button");
   aboutbtn.classList.add("nav-buttons");
